@@ -131,15 +131,34 @@ class DateSearchReport extends StatelessWidget {
                 SizedBox(
                   width: 32,
                 ),
-                SizedBox(
-                  width: 120,
-                  height: 32,
-                  child: ElevatedButton(
-                    onPressed: () {},
-                    child: Text('CSV Download'),
-                    style: ElevatedButton.styleFrom(primary: Color(0xff00447b)),
-                  ),
-                )
+                 SizedBox(
+                      width: 150,
+                      height: 32,
+                      
+                      child: InputDecorator(
+                        decoration: InputDecoration(
+                            isDense: true,
+                            contentPadding:const EdgeInsets.only(left: 12,right: 4),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(3.0))),
+                        child: DropdownButtonHideUnderline(
+                          child: DropdownButton<String>(
+                            hint: Text('CSV Download'),
+                            value: 'CSV Download',
+                            style: TextStyle(color: Colors.black54),
+                            isDense: false,
+                            onChanged: (newValue) {},
+                            items: {'CSV Download', 'Doc Download', 'xls Download'}.map((String value) {
+                              return DropdownMenuItem<String>(
+                                value: value,
+                                child: Text(value),
+                              
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                      ),
+                    ),
               ],
             ),
           ),

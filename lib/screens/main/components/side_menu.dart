@@ -18,7 +18,10 @@ class SideMenu extends StatelessWidget {
       child: ListView(
         children: [
           DrawerHeader(
-            child: Image.asset("assets/images/paymal_logo.png"),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Image.asset("assets/images/moee.jpeg"),
+            ),
           ),
           DrawerListTile(
             title: "Portal",

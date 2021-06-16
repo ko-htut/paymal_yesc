@@ -17,6 +17,8 @@ class DashboardScreen extends StatelessWidget {
     final indexController=context.watch<DrawerIndexController>();
     return SafeArea(
       child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Header(),
           Expanded(
@@ -61,6 +63,10 @@ class DashboardScreen extends StatelessWidget {
               ),),
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("Copyright © 2021 by MPSS. All rights reserved. "),
+          )
         ],
       ),
     );
