@@ -163,18 +163,21 @@ class PieChart2State extends State {
   }
 
   List<PieChartSectionData> showingSections() {
+    List<double> value=[15,10,8,22,30,40,10,30,20,30,30];
+    double sum=value.fold(0, (previousValue, element) => previousValue+element);
     return List.generate(11, (i) {
       final isTouched = i == touchedIndex;
-      final fontSize = isTouched ? 25.0 : 16.0;
+      final fontSize = isTouched ? 18.0 : 13.0;
       final radius = isTouched ? 90.0 : 80.0;
       switch (i) {
         case 0:
           return PieChartSectionData(
             color: const Color(0xffa4a4a4),
-            value: 15,
-            title: '15%',
+            value: value[i],
+            title: (value[i]/sum*100).toStringAsFixed(1)+'%',
             radius: radius,
-            showTitle: false,
+            showTitle: true,
+            titlePositionPercentageOffset: 0.8,
             titleStyle: TextStyle(
                 fontSize: fontSize,
                 fontWeight: FontWeight.bold,
@@ -183,9 +186,10 @@ class PieChart2State extends State {
         case 1:
           return PieChartSectionData(
             color: const Color(0xffffbf00),
-            value: 10,
-            title: '10%',
-            showTitle: false,
+            value: value[i],
+            title: (value[i]/sum*100).toStringAsFixed(1)+'%',
+            showTitle: true,
+            titlePositionPercentageOffset: 0.8,
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -195,9 +199,10 @@ class PieChart2State extends State {
         case 2:
           return PieChartSectionData(
             color: const Color(0xff5a9ad4),
-            value: 8,
-            title: '8%',
-            showTitle: false,
+            value: value[i],
+            title: (value[i]/sum*100).toStringAsFixed(1)+'%',
+            showTitle: true,
+            titlePositionPercentageOffset: 0.8,
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -207,9 +212,10 @@ class PieChart2State extends State {
         case 3:
           return PieChartSectionData(
             color: const Color(0xff6fac46),
-            value: 22,
-            title: '22%',
-            showTitle: false,
+            value: value[i],
+            title: (value[i]/sum*100).toStringAsFixed(1)+'%',
+            showTitle: true,
+            titlePositionPercentageOffset: 0.8,
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -219,9 +225,10 @@ class PieChart2State extends State {
         case 4:
           return PieChartSectionData(
             color: const Color(0xff254377),
-            value: 30,
-            title: '30%',
-            showTitle: false,
+            value: value[i],
+            title: (value[i]/sum*100).toStringAsFixed(1)+'%',
+            showTitle: true,
+            titlePositionPercentageOffset: 0.8,
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -231,9 +238,10 @@ class PieChart2State extends State {
         case 5:
           return PieChartSectionData(
             color: const Color(0xff9b4408),
-            value: 40,
-            title: '40%',
-            showTitle: false,
+            value: value[i],
+            title: (value[i]/sum*100).toStringAsFixed(1)+'%',
+            showTitle: true,
+            titlePositionPercentageOffset: 0.8,
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -243,9 +251,10 @@ class PieChart2State extends State {
         case 6:
           return PieChartSectionData(
             color: const Color(0xff626262),
-            value: 10,
-            title: '10%',
-            showTitle: false,
+            value: value[i],
+            title: (value[i]/sum*100).toStringAsFixed(1)+'%',
+            showTitle: true,
+            titlePositionPercentageOffset: 0.8,
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -255,9 +264,10 @@ class PieChart2State extends State {
         case 7:
           return PieChartSectionData(
             color: const Color(0xff997200),
-            value: 30,
-            title: '30%',
-            showTitle: false,
+            value: value[i],
+            title: (value[i]/sum*100).toStringAsFixed(1)+'%',
+            showTitle: true,
+            titlePositionPercentageOffset: 0.8,
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -267,9 +277,10 @@ class PieChart2State extends State {
         case 8:
           return PieChartSectionData(
             color: const Color(0xff245d90),
-            value: 20,
-            title: '20%',
-            showTitle: false,
+            value: value[i],
+            title: (value[i]/sum*100).toStringAsFixed(1)+'%',
+            showTitle: true,
+            titlePositionPercentageOffset: 0.8,
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -279,9 +290,10 @@ class PieChart2State extends State {
         case 9:
           return PieChartSectionData(
             color: const Color(0xff4371c3),
-            value: 30,
-            title: '30%',
-            showTitle: false,
+            value: value[i],
+            title: (value[i]/sum*100).toStringAsFixed(1)+'%',
+            showTitle: true,
+            titlePositionPercentageOffset: 0.8,
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,
@@ -291,9 +303,10 @@ class PieChart2State extends State {
         case 10:
           return PieChartSectionData(
             color: const Color(0xffec7c30),
-            value: 30,
-            title: '30%',
-            showTitle: false,
+            value: value[i],
+            title: (value[i]/sum*100).toStringAsFixed(1)+'%',
+            showTitle: true,
+            titlePositionPercentageOffset: 0.8,
             radius: radius,
             titleStyle: TextStyle(
                 fontSize: fontSize,

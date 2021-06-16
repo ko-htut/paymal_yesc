@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'MOEE Management Portall',
+        title: 'MOEE Management Portal',
         theme: ThemeData.light().copyWith(
           scaffoldBackgroundColor: bgColor,
           textTheme: GoogleFonts.poppinsTextTheme(Theme.of(context).textTheme)
