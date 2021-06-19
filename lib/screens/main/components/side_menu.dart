@@ -20,7 +20,7 @@ class SideMenu extends StatelessWidget {
           DrawerHeader(
             child: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: Image.asset("assets/images/moee.jpeg"),
+              child: Image.asset("assets/images/moee.png"),
             ),
           ),
           DrawerListTile(

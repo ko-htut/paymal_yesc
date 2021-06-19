@@ -21,7 +21,7 @@ class BarChartDayState extends State<BarChartDay> {
         padding: const EdgeInsets.only(left: 32,right: 32),
         child: Column(
           children: [
-            Text('Daily Report',style:TextStyle(color: Colors.black, fontSize: 18)),
+            Text('Daily Service Charges Amount',style:TextStyle(color: Colors.black, fontSize: 18)),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(top: 20),

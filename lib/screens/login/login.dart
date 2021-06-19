@@ -36,7 +36,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     width: 160,
                     decoration: BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/moee.jpeg'),
+                        image: AssetImage('assets/images/moee.png'),
                       ),
                       // borderRadius: BorderRadius.circular(100),
                     ),

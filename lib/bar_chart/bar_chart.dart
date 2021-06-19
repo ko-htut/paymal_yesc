@@ -23,7 +23,7 @@ class BarChartWidgetState extends State<BarChartWidget> {
         padding: const EdgeInsets.only(left: 32,right: 32),
         child: Column(
           children: [
-            Text('Monthly Total Amount by Corporate Report',style:TextStyle(color: Colors.black, fontSize: 18)),
+            Text('Monthly Meter Consuming Amount',style:TextStyle(color: Colors.black, fontSize: 18)),
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.only(top: 20),

@@ -32,7 +32,6 @@ class _ReportTableState extends State<ReportTable> {
             columnWidthMode: ColumnWidthMode.lastColumnFill,
             stackedHeaderRows: _getStackedHeaderRows(),
             columns: getGridColumn(),
-
             allowSwiping: true,
           ),
         ),
@@ -43,9 +42,8 @@ class _ReportTableState extends State<ReportTable> {
               border: Border(
                   top: BorderSide(
                       width: .5,
-                      color: SfTheme.of(context)
-                          .dataGridThemeData
-                          .gridLineColor),
+                      color:
+                          SfTheme.of(context).dataGridThemeData.gridLineColor),
                   bottom: BorderSide.none,
                   left: BorderSide.none,
                   right: BorderSide.none)),
@@ -54,27 +52,25 @@ class _ReportTableState extends State<ReportTable> {
       ],
     );
   }
+
   Widget _buildDataPager() {
     return SfDataPagerTheme(
       data: SfDataPagerThemeData(
         // brightness: model.themeData.brightness,
         // selectedItemColor: model.backgroundColor,
-        selectedItemColor: Color(0xff00457c),
+        selectedItemColor: Color(0xff00447b),
         itemBorderRadius: BorderRadius.zero,
         itemColor: Colors.black54,
       ),
       child: SfDataPager(
         delegate: reportDataSource,
-
-        pageCount:
-        reportDataSource._employeeData.length / reportDataSource._rowsPerPage,
+        pageCount: reportDataSource._employeeData.length /
+            reportDataSource._rowsPerPage,
         direction: Axis.horizontal,
       ),
     );
   }
 }
-
-
 
 Widget _getWidgetForStackedHeaderCell(String title) {
   return Container(
@@ -114,6 +110,7 @@ List<ReportModel> getReportModel() {
         serviceRegion: 'YESC(YGN..Bill)',
         township: 'Bahan',
         meterNo: 'F-34798',
+        name: 'U Thein Aung',
         barcodeNo: '1811067754',
         meterConsumingAmount: '12,500',
         scCor: '200',
@@ -130,6 +127,7 @@ List<ReportModel> getReportModel() {
         endDate: '17/05/2021\n09:43:20',
         transactionId: 'ADB90823',
         corporationId: 'PM006',
+        name: 'U Kyi Zin',
         corporationName: 'Paymal',
         serviceRegion: 'MESC(Mandalay..Bill)',
         township: 'Mandalay',
@@ -147,6 +145,7 @@ List<ReportModel> getReportModel() {
     ReportModel(
         id: 3,
         startDate: '17/05/2021\n09:41:59',
+        name: 'U Thura',
         endDate: '17/05/2021\n09:42:20',
         transactionId: 'ADB9010',
         corporationId: 'CB566',
@@ -174,6 +173,7 @@ List<ReportModel> getReportModel() {
         serviceRegion: '(YESC) Yangon Electricity Bill',
         township: 'Yangon',
         meterNo: 'C-34801',
+        name: 'Daw Cho Cho',
         barcodeNo: '2101069759',
         meterConsumingAmount: '23,000',
         scCor: '200',
@@ -190,6 +190,7 @@ List<ReportModel> getReportModel() {
         endDate: '16/06/2021\n08:44:59',
         transactionId: 'AD89014',
         corporationId: 'CB006',
+        name: 'U Aung Myint',
         corporationName: 'CB',
         serviceRegion: '(YESC) Yangon Electricity Billl',
         township: 'Yangon',
@@ -206,6 +207,7 @@ List<ReportModel> getReportModel() {
         reason: '-'),
     ReportModel(
         id: 6,
+        name: 'U Min Min',
         startDate: '16/06/2021\n08:33:59',
         endDate: '16/06/2021\n08:34:59',
         transactionId: 'AD89015',
@@ -235,6 +237,7 @@ List<ReportModel> getReportModel() {
         township: 'Nay Pyi Taw',
         meterNo: 'M-54803',
         barcodeNo: '626121014',
+        name: 'Daw Khine Khine',
         meterConsumingAmount: '30,000',
         scCor: '200',
         scMPSS: '300',
@@ -253,6 +256,7 @@ List<ReportModel> getReportModel() {
         corporationName: 'Paymal',
         serviceRegion: '(ESE) Mon Electricity Bill',
         township: 'MLM',
+        name: 'U Nyi Htwe',
         meterNo: 'N-34816',
         barcodeNo: '6221210165',
         meterConsumingAmount: '30,000',
@@ -269,6 +273,7 @@ List<ReportModel> getReportModel() {
         startDate: '13/06/2021\n09:41:59',
         endDate: '13/06/2021\n09:42:00',
         transactionId: 'AD89028',
+        name: 'U Kyaw Thu',
         corporationId: 'CB006',
         corporationName: 'CB',
         serviceRegion: '(ESE) Magway Electricity Bill',
@@ -286,6 +291,7 @@ List<ReportModel> getReportModel() {
         reason: '-'),   
          ReportModel(
         id: 10,
+        name: 'U Min Kha',
         startDate: '13/06/2021\n09:41:59',
         endDate: '13/06/2021\n09:42:00',
         transactionId: 'AD89025',
@@ -315,15 +321,16 @@ List<GridTextColumn> getGridColumn() {
     gridText('transactionId', 'Transaction ID'),
     gridText('corporationId', 'Corporate ID'),
     gridText('corporationName', 'Corporate Name'),
+    gridText('name', 'Biller Name'),
     gridText('serviceRegion', 'Service Region'),
     gridText('township', 'Township'),
     gridText('meterNo', 'Meter No.'),
-    gridText('barcodeNo', 'Barcode CNP/Ref No.'),
+    gridText('barcodeNo', 'Barcode/CNP/Ref No.'),
     gridText('meterConsumingAmount', 'Meter Consuming Amount(MMK)'),
     gridText('corporate', 'Corporate'),
     gridText('mpss', 'MPSS'),
     gridText('total', 'Total'),
-    gridText('netAmount', 'Net Amount(MMk)'),
+    gridText('netAmount', 'Net Amount (MMK)'),
     gridText('paymentMethod', 'Payment Method'),
     gridText('statusCode', 'Status Code'),
     gridText('status', 'Status'),
@@ -364,12 +371,14 @@ class ReportModel {
   final String netAmount;
   final String paymentMethod;
   final String statusCode;
+  final String name;
   final String status;
   final String reason;
 
   ReportModel({
     required this.id,
     required this.startDate,
+    required this.name,
     required this.endDate,
     required this.transactionId,
     required this.corporationId,
@@ -397,13 +406,14 @@ class ReportDataSource extends DataGridSource {
               DataGridCell<int>(columnName: 'id', value: e.id),
               DataGridCell<String>(columnName: 'startDate', value: e.startDate),
               DataGridCell<String>(columnName: 'endDate', value: e.endDate),
-              DataGridCell<String>(columnName: 'endDate', value: e.endDate),
               DataGridCell<String>(
                   columnName: 'transactionId', value: e.transactionId),
               DataGridCell<String>(
                   columnName: 'corporationId', value: e.corporationId),
               DataGridCell<String>(
                   columnName: 'corporationName', value: e.corporationName),
+      DataGridCell<String>(
+          columnName: 'name', value: e.name),
               DataGridCell<String>(
                   columnName: 'serviceRegion', value: e.serviceRegion),
               DataGridCell<String>(columnName: 'township', value: e.township),
@@ -421,17 +431,18 @@ class ReportDataSource extends DataGridSource {
               DataGridCell<String>(
                   columnName: 'statusCode', value: e.statusCode),
               DataGridCell<String>(columnName: 'status', value: e.status),
+              DataGridCell<String>(columnName: 'reason', value: e.reason),
             ]))
         .toList();
   }
 
   List<DataGridRow> _employeeData = [];
-  final int _rowsPerPage=3;
+  final int _rowsPerPage = 3;
 
   @override
   List<DataGridRow> get rows => _employeeData;
 
-  int realIndex=-1;
+  int realIndex = -1;
 
   @override
   DataGridRowAdapter buildRow(DataGridRow row) {
@@ -439,15 +450,15 @@ class ReportDataSource extends DataGridSource {
 
     return DataGridRowAdapter(
         cells: List.generate(list.length, (index) {
-          if(index==0){
-            realIndex+=1;
-          }
-          Color rowColor=Color(0xffdfdfdf);
-          if(realIndex.isOdd){
-            rowColor=Color(0xffefefef);
-          }else{
-            rowColor=Color(0xffdfdfdf);
-          }
+      if (index == 0) {
+        realIndex += 1;
+      }
+      Color rowColor = Color(0xffdfdfdf);
+      if (realIndex.isOdd) {
+        rowColor = Color(0xffefefef);
+      } else {
+        rowColor = Color(0xffdfdfdf);
+      }
       return Container(
         alignment: Alignment.center,
         color: rowColor,
