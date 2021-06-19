@@ -232,6 +232,46 @@ class DateSearchReport extends StatelessWidget {
                   SizedBox(
                     width: 32,
                   ),
+                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text('Service Region'),
+                      SizedBox(
+                        height: 4,
+                      ),
+                      SizedBox(
+                        width: 160,
+                        height: 32,
+                        child: InputDecorator(
+                          decoration: InputDecoration(
+                              isDense: true,
+                              contentPadding:
+                                  const EdgeInsets.only(left: 12, right: 4),
+                              border: OutlineInputBorder(
+                                  borderRadius: BorderRadius.circular(3.0))),
+                          child: DropdownButtonHideUnderline(
+                            child: DropdownButton<String>(
+                              hint: Text('All'),
+                              value: 'All',
+                              style: TextStyle(color: Colors.black54),
+                              isDense: false,
+                              onChanged: (newValue) {},
+                              items: {'All', 'Name One', 'Name Two'}
+                                  .map((String value) {
+                                return DropdownMenuItem<String>(
+                                  value: value,
+                                  child: Text(value),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                   SizedBox(
+                    width: 32,
+                  ),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -255,46 +295,8 @@ class DateSearchReport extends StatelessWidget {
                       ),
                     ],
                   ),
-                  SizedBox(
-                    width: 32,
-                  ),
-                  // Column(
-                  //   crossAxisAlignment: CrossAxisAlignment.start,
-                  //   children: [
-                  //     Text('Service Region'),
-                  //     SizedBox(
-                  //       height: 4,
-                  //     ),
-                  //     SizedBox(
-                  //       width: 160,
-                  //       height: 32,
-                  //       child: InputDecorator(
-                  //         decoration: InputDecoration(
-                  //             isDense: true,
-                  //             contentPadding:
-                  //                 const EdgeInsets.only(left: 12, right: 4),
-                  //             border: OutlineInputBorder(
-                  //                 borderRadius: BorderRadius.circular(3.0))),
-                  //         child: DropdownButtonHideUnderline(
-                  //           child: DropdownButton<String>(
-                  //             hint: Text('All'),
-                  //             value: 'All',
-                  //             style: TextStyle(color: Colors.black54),
-                  //             isDense: false,
-                  //             onChanged: (newValue) {},
-                  //             items: {'All', 'Name One', 'Name Two'}
-                  //                 .map((String value) {
-                  //               return DropdownMenuItem<String>(
-                  //                 value: value,
-                  //                 child: Text(value),
-                  //               );
-                  //             }).toList(),
-                  //           ),
-                  //         ),
-                  //       ),
-                  //     ),
-                  //   ],
-                  // ),
+                 
+                 
              
                   SizedBox(
                     width: 32,
