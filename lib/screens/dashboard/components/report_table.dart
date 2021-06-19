@@ -1,7 +1,8 @@
 import 'package:admin/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:syncfusion_flutter_core/theme.dart';
-import 'package:syncfusion_flutter_datagrid/datagrid.dart' hide DataPagerDelegate;
+import 'package:syncfusion_flutter_datagrid/datagrid.dart'
+    hide DataPagerDelegate;
 
 class ReportTable extends StatefulWidget {
   const ReportTable({Key? key}) : super(key: key);
